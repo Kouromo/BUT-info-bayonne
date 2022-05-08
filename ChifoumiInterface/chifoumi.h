@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class Chifoumi
+class Chifoumi 
 {
     ///* ---- PARTIE MOD�LE ---------------------------
 
