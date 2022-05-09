@@ -10,12 +10,15 @@
 #define UI_CHIFOUMIVUE_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
+#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
@@ -32,38 +35,40 @@ public:
     QHBoxLayout *hPrincipal;
     QVBoxLayout *verticalLayout_2;
     QGridLayout *gridLayout_2;
-    QLabel *lScoreJoueur;
-    QSpacerItem *horizontalSpacer_2;
-    QLabel *lScoreMachine;
-    QLabel *lFigureJoueur;
-    QLabel *lFigureMachine;
     QLabel *lMachine;
     QLabel *lJoueur;
+    QLabel *lScoreMachine;
     QHBoxLayout *hLayoutDuel;
     QSpacerItem *horizontalSpacer_4;
     QLabel *lImageDuel;
     QSpacerItem *horizontalSpacer_3;
+    QLabel *lScoreJoueur;
     QSpacerItem *horizontalSpacer;
+    QLabel *lFigureMachine;
+    QSpacerItem *horizontalSpacer_2;
+    QLabel *lFigureJoueur;
     QSpacerItem *verticalSpacer;
     QHBoxLayout *hFigures;
     QGroupBox *groupBox;
     QHBoxLayout *horizontalLayout_7;
     QSpacerItem *horizontalSpacer_6;
-    QLabel *lPierre;
-    QLabel *lPapier;
-    QLabel *lCiseau;
+    QPushButton *bPierre;
+    QPushButton *bPapier;
+    QPushButton *bCiseau;
     QSpacerItem *horizontalSpacer_5;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer_7;
-    QPushButton *pushButton;
+    QPushButton *bNewGame;
     QMenuBar *menubar;
+    QMenu *menuFichier;
+    QMenu *menuAide;
 
     void setupUi(QMainWindow *ChifoumiVue)
     {
         if (ChifoumiVue->objectName().isEmpty())
             ChifoumiVue->setObjectName(QString::fromUtf8("ChifoumiVue"));
-        ChifoumiVue->resize(340, 353);
-        ChifoumiVue->setMinimumSize(QSize(340, 350));
+        ChifoumiVue->resize(340, 360);
+        ChifoumiVue->setMinimumSize(QSize(340, 360));
         centralwidget = new QWidget(ChifoumiVue);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         horizontalLayout_2 = new QHBoxLayout(centralwidget);
@@ -74,36 +79,6 @@ public:
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        lScoreJoueur = new QLabel(centralwidget);
-        lScoreJoueur->setObjectName(QString::fromUtf8("lScoreJoueur"));
-
-        gridLayout_2->addWidget(lScoreJoueur, 1, 0, 1, 1, Qt::AlignHCenter);
-
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_2->addItem(horizontalSpacer_2, 1, 2, 1, 1);
-
-        lScoreMachine = new QLabel(centralwidget);
-        lScoreMachine->setObjectName(QString::fromUtf8("lScoreMachine"));
-
-        gridLayout_2->addWidget(lScoreMachine, 1, 3, 1, 1, Qt::AlignHCenter);
-
-        lFigureJoueur = new QLabel(centralwidget);
-        lFigureJoueur->setObjectName(QString::fromUtf8("lFigureJoueur"));
-        lFigureJoueur->setMaximumSize(QSize(80, 80));
-        lFigureJoueur->setPixmap(QPixmap(QString::fromUtf8(":/chifoumi/rien_115.png")));
-        lFigureJoueur->setScaledContents(true);
-
-        gridLayout_2->addWidget(lFigureJoueur, 2, 0, 1, 1);
-
-        lFigureMachine = new QLabel(centralwidget);
-        lFigureMachine->setObjectName(QString::fromUtf8("lFigureMachine"));
-        lFigureMachine->setMaximumSize(QSize(80, 80));
-        lFigureMachine->setPixmap(QPixmap(QString::fromUtf8(":/chifoumi/rien_115.png")));
-        lFigureMachine->setScaledContents(true);
-
-        gridLayout_2->addWidget(lFigureMachine, 2, 3, 1, 1);
-
         lMachine = new QLabel(centralwidget);
         lMachine->setObjectName(QString::fromUtf8("lMachine"));
 
@@ -113,6 +88,11 @@ public:
         lJoueur->setObjectName(QString::fromUtf8("lJoueur"));
 
         gridLayout_2->addWidget(lJoueur, 0, 0, 1, 1, Qt::AlignHCenter);
+
+        lScoreMachine = new QLabel(centralwidget);
+        lScoreMachine->setObjectName(QString::fromUtf8("lScoreMachine"));
+
+        gridLayout_2->addWidget(lScoreMachine, 1, 3, 1, 1, Qt::AlignHCenter);
 
         hLayoutDuel = new QHBoxLayout();
         hLayoutDuel->setObjectName(QString::fromUtf8("hLayoutDuel"));
@@ -135,9 +115,34 @@ public:
 
         gridLayout_2->addLayout(hLayoutDuel, 2, 2, 1, 1);
 
+        lScoreJoueur = new QLabel(centralwidget);
+        lScoreJoueur->setObjectName(QString::fromUtf8("lScoreJoueur"));
+
+        gridLayout_2->addWidget(lScoreJoueur, 1, 0, 1, 1, Qt::AlignHCenter);
+
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout_2->addItem(horizontalSpacer, 0, 2, 1, 1);
+
+        lFigureMachine = new QLabel(centralwidget);
+        lFigureMachine->setObjectName(QString::fromUtf8("lFigureMachine"));
+        lFigureMachine->setMaximumSize(QSize(80, 80));
+        lFigureMachine->setPixmap(QPixmap(QString::fromUtf8(":/chifoumi/rien_115.png")));
+        lFigureMachine->setScaledContents(true);
+
+        gridLayout_2->addWidget(lFigureMachine, 2, 3, 1, 1);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_2->addItem(horizontalSpacer_2, 1, 2, 1, 1);
+
+        lFigureJoueur = new QLabel(centralwidget);
+        lFigureJoueur->setObjectName(QString::fromUtf8("lFigureJoueur"));
+        lFigureJoueur->setMaximumSize(QSize(80, 80));
+        lFigureJoueur->setPixmap(QPixmap(QString::fromUtf8(":/chifoumi/rien_115.png")));
+        lFigureJoueur->setScaledContents(true);
+
+        gridLayout_2->addWidget(lFigureJoueur, 2, 0, 1, 1);
 
 
         verticalLayout_2->addLayout(gridLayout_2);
@@ -156,29 +161,35 @@ public:
 
         horizontalLayout_7->addItem(horizontalSpacer_6);
 
-        lPierre = new QLabel(groupBox);
-        lPierre->setObjectName(QString::fromUtf8("lPierre"));
-        lPierre->setMaximumSize(QSize(70, 70));
-        lPierre->setPixmap(QPixmap(QString::fromUtf8(":/chifoumi/pierre_115.png")));
-        lPierre->setScaledContents(true);
+        bPierre = new QPushButton(groupBox);
+        bPierre->setObjectName(QString::fromUtf8("bPierre"));
+        bPierre->setEnabled(true);
+        bPierre->setMinimumSize(QSize(80, 80));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/chifoumi/pierre_115.png"), QSize(), QIcon::Normal, QIcon::Off);
+        bPierre->setIcon(icon);
+        bPierre->setIconSize(QSize(80, 80));
+        bPierre->setCheckable(false);
 
-        horizontalLayout_7->addWidget(lPierre, 0, Qt::AlignLeft);
+        horizontalLayout_7->addWidget(bPierre);
 
-        lPapier = new QLabel(groupBox);
-        lPapier->setObjectName(QString::fromUtf8("lPapier"));
-        lPapier->setMaximumSize(QSize(70, 70));
-        lPapier->setPixmap(QPixmap(QString::fromUtf8(":/chifoumi/papier_115.png")));
-        lPapier->setScaledContents(true);
+        bPapier = new QPushButton(groupBox);
+        bPapier->setObjectName(QString::fromUtf8("bPapier"));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/chifoumi/papier_115.png"), QSize(), QIcon::Normal, QIcon::Off);
+        bPapier->setIcon(icon1);
+        bPapier->setIconSize(QSize(80, 80));
 
-        horizontalLayout_7->addWidget(lPapier, 0, Qt::AlignHCenter);
+        horizontalLayout_7->addWidget(bPapier);
 
-        lCiseau = new QLabel(groupBox);
-        lCiseau->setObjectName(QString::fromUtf8("lCiseau"));
-        lCiseau->setMaximumSize(QSize(70, 70));
-        lCiseau->setPixmap(QPixmap(QString::fromUtf8(":/chifoumi/ciseau_115.png")));
-        lCiseau->setScaledContents(true);
+        bCiseau = new QPushButton(groupBox);
+        bCiseau->setObjectName(QString::fromUtf8("bCiseau"));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/chifoumi/ciseau_115.png"), QSize(), QIcon::Normal, QIcon::Off);
+        bCiseau->setIcon(icon2);
+        bCiseau->setIconSize(QSize(80, 80));
 
-        horizontalLayout_7->addWidget(lCiseau, 0, Qt::AlignRight);
+        horizontalLayout_7->addWidget(bCiseau);
 
         horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -196,10 +207,10 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_7);
 
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        bNewGame = new QPushButton(centralwidget);
+        bNewGame->setObjectName(QString::fromUtf8("bNewGame"));
 
-        horizontalLayout->addWidget(pushButton, 0, Qt::AlignRight);
+        horizontalLayout->addWidget(bNewGame, 0, Qt::AlignRight);
 
 
         verticalLayout_2->addLayout(horizontalLayout);
@@ -214,7 +225,14 @@ public:
         menubar = new QMenuBar(ChifoumiVue);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 340, 20));
+        menuFichier = new QMenu(menubar);
+        menuFichier->setObjectName(QString::fromUtf8("menuFichier"));
+        menuAide = new QMenu(menubar);
+        menuAide->setObjectName(QString::fromUtf8("menuAide"));
         ChifoumiVue->setMenuBar(menubar);
+
+        menubar->addAction(menuFichier->menuAction());
+        menubar->addAction(menuAide->menuAction());
 
         retranslateUi(ChifoumiVue);
 
@@ -224,18 +242,20 @@ public:
     void retranslateUi(QMainWindow *ChifoumiVue)
     {
         ChifoumiVue->setWindowTitle(QCoreApplication::translate("ChifoumiVue", "ChifoumiVue", nullptr));
-        lScoreJoueur->setText(QCoreApplication::translate("ChifoumiVue", "0", nullptr));
-        lScoreMachine->setText(QCoreApplication::translate("ChifoumiVue", "0", nullptr));
-        lFigureJoueur->setText(QString());
-        lFigureMachine->setText(QString());
         lMachine->setText(QCoreApplication::translate("ChifoumiVue", "Machine", nullptr));
         lJoueur->setText(QCoreApplication::translate("ChifoumiVue", "Vous", nullptr));
+        lScoreMachine->setText(QCoreApplication::translate("ChifoumiVue", "0", nullptr));
         lImageDuel->setText(QString());
+        lScoreJoueur->setText(QCoreApplication::translate("ChifoumiVue", "0", nullptr));
+        lFigureMachine->setText(QString());
+        lFigureJoueur->setText(QString());
         groupBox->setTitle(QCoreApplication::translate("ChifoumiVue", "Choisissez une figure :", nullptr));
-        lPierre->setText(QString());
-        lPapier->setText(QString());
-        lCiseau->setText(QString());
-        pushButton->setText(QCoreApplication::translate("ChifoumiVue", "Nouvelle Partie", nullptr));
+        bPierre->setText(QString());
+        bPapier->setText(QString());
+        bCiseau->setText(QString());
+        bNewGame->setText(QCoreApplication::translate("ChifoumiVue", "Nouvelle Partie", nullptr));
+        menuFichier->setTitle(QCoreApplication::translate("ChifoumiVue", "Fichier", nullptr));
+        menuAide->setTitle(QCoreApplication::translate("ChifoumiVue", "Aide", nullptr));
     } // retranslateUi
 
 };
