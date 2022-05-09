@@ -37,8 +37,7 @@ class Chifoumi
                en fonction du dernier coup jou� par chacun d'eux */
 
          ///* M�thodes utilitaires du Mod�le
-    private :
-        UnCoup genererUnCoup();
+        void genererUnCoup();
     /* retourne une valeur al�atoire = pierre, papier ou ciseau.
        Utilis�e pour faire jouer la machine */
 

@@ -239,7 +239,7 @@ debug/moc_chifoumivue.cpp: ../ChifoumiInterface/chifoumivue.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/qicon.h \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
-	C:\Qt\Qt5.15.2\5.15.2\mingw81_64\bin\moc.exe $(DEFINES) --include F:/perso/s2/s2.01/Projet/build-ChifoumiInterface-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/debug/moc_predefs.h -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/mkspecs/win32-g++ -IF:/perso/s2/s2.01/Projet/ChifoumiInterface -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtANGLE -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore -I. -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Qt5.15.2/Tools/mingw810_64/x86_64-w64-mingw32/include ..\ChifoumiInterface\chifoumivue.h -o debug\moc_chifoumivue.cpp
+	C:\Qt\Qt5.15.2\5.15.2\mingw81_64\bin\moc.exe $(DEFINES) --include F:/BUT/Semestre2/S201/cyk/BUT-info-bayonne-s2.01/build-ChifoumiInterface-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/debug/moc_predefs.h -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/mkspecs/win32-g++ -IF:/BUT/Semestre2/S201/cyk/BUT-info-bayonne-s2.01/ChifoumiInterface -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtANGLE -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore -I. -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Qt5.15.2/Tools/mingw810_64/x86_64-w64-mingw32/include ..\ChifoumiInterface\chifoumivue.h -o debug\moc_chifoumivue.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -492,6 +492,10 @@ debug/chifoumivue.o: ../ChifoumiInterface/chifoumivue.cpp ../ChifoumiInterface/c
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/qicon.h \
 		ui_chifoumivue.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/QVariant \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/QIcon \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QAction \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qaction.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qactiongroup.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QApplication \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
@@ -510,11 +514,10 @@ debug/chifoumivue.o: ../ChifoumiInterface/chifoumivue.cpp ../ChifoumiInterface/c
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QHBoxLayout \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QLabel \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QMenu \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qmenu.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QMenuBar \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qmenubar.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qmenu.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qaction.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qactiongroup.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
