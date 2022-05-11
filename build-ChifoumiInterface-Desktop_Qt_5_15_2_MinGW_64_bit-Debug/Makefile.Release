@@ -131,6 +131,7 @@ compiler_moc_header_make_all: release/moc_chifoumivue.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) release\moc_chifoumivue.cpp
 release/moc_chifoumivue.cpp: ../ChifoumiInterface/chifoumivue.h \
+		../ChifoumiInterface/chifoumi.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -268,6 +269,7 @@ release/chifoumi.o: ../ChifoumiInterface/chifoumi.cpp ../ChifoumiInterface/chifo
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\chifoumi.o ..\ChifoumiInterface\chifoumi.cpp
 
 release/main.o: ../ChifoumiInterface/main.cpp ../ChifoumiInterface/chifoumivue.h \
+		../ChifoumiInterface/chifoumi.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -384,6 +386,7 @@ release/main.o: ../ChifoumiInterface/main.cpp ../ChifoumiInterface/chifoumivue.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\ChifoumiInterface\main.cpp
 
 release/chifoumivue.o: ../ChifoumiInterface/chifoumivue.cpp ../ChifoumiInterface/chifoumivue.h \
+		../ChifoumiInterface/chifoumi.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QMainWindow \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qmainwindow.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -492,6 +495,10 @@ release/chifoumivue.o: ../ChifoumiInterface/chifoumivue.cpp ../ChifoumiInterface
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/qicon.h \
 		ui_chifoumivue.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/QVariant \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/QIcon \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QAction \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qaction.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qactiongroup.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QApplication \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
@@ -510,11 +517,10 @@ release/chifoumivue.o: ../ChifoumiInterface/chifoumivue.cpp ../ChifoumiInterface
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QHBoxLayout \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QLabel \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QMenu \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qmenu.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QMenuBar \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qmenubar.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qmenu.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qaction.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qactiongroup.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \

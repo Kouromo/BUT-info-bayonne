@@ -9,7 +9,7 @@
 #include <cstdlib>
 #include <ctime>
 
-
+ 
     ///* ---- PARTIE MOD�LE ---------------------------
 
 Chifoumi::Chifoumi():
@@ -112,26 +112,26 @@ int randMinMax(int min, int max){
    return rand()%(max-min) + min;
 }
 
-Chifoumi::UnCoup Chifoumi::genererUnCoup()
+void Chifoumi::genererUnCoup()
 {
-    Chifoumi::UnCoup valeurGeneree;   // valeur � retourner
+
     unsigned int nbAleatoire;
     nbAleatoire = rand()%(4-1) + 1;
     switch (nbAleatoire)
     {
     case 1 :
-        valeurGeneree = Chifoumi::pierre;
+         this->coupMachine=Chifoumi::pierre;
         break;
     case 2 :
-        valeurGeneree = Chifoumi::papier;
+       this->coupMachine= Chifoumi::papier;
         break;
     case 3 :
-        valeurGeneree = Chifoumi::ciseau;
+        this->coupMachine = Chifoumi::ciseau;
         break;
     default:
+        this->coupMachine = Chifoumi::rien;
         break;
     }
-    return valeurGeneree;
 }
 
         /// Setters
@@ -178,3 +178,4 @@ void Chifoumi::initCoups() {
     this->coupJoueur=rien;
     this->coupMachine=rien;
 }
+
