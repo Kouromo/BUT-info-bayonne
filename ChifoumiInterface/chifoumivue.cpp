@@ -8,6 +8,14 @@ ChifoumiVue::ChifoumiVue(QWidget *parent)
     , ui(new Ui::ChifoumiVue)
 {
     ui->setupUi(this);
+<<<<<<< HEAD
+=======
+    connect(ui->bCiseau, SIGNAL(clicked()), this, SLOT(envoieCiseau()));
+    connect(ui->bPapier, SIGNAL(clicked()), this, SLOT(envoiePapier()));
+    connect(ui->bPierre, SIGNAL(clicked()), this, SLOT(envoiePierre()));
+    connect(ui->bNewGame, SIGNAL(clicked()), this, SLOT(nouvellePartie()));
+}
+>>>>>>> fabf1119779f2764e9e77a199198cea1f8b3a1f7
 
 }
 ChifoumiVue::~ChifoumiVue()
@@ -15,7 +23,54 @@ ChifoumiVue::~ChifoumiVue()
     delete ui;
 }
 
+<<<<<<< HEAD
 
+=======
+void ChifoumiVue::envoieCiseau()
+{
+    char gagnant;
+    QString Score;
+    this->LaPartie.setCoupJoueur(Chifoumi::ciseau);
+    LaPartie.genererUnCoup();
+    miseAJourInterface(this->LaPartie.getCoupJoueur(), this->LaPartie.getCoupMachine());
+    gagnant=LaPartie.determinerGagnant();
+    LaPartie.majScores(gagnant);
+    Score.setNum(LaPartie.getScoreJoueur());
+    ui->lScoreJoueur->setText(Score);
+    Score.setNum(LaPartie.getScoreMachine());
+    ui->lScoreMachine->setText(Score);
+}
+
+void ChifoumiVue::envoiePapier()
+{
+    char gagnant;
+    QString Score;
+    this->LaPartie.setCoupJoueur(Chifoumi::papier);
+    LaPartie.genererUnCoup();
+    miseAJourInterface(this->LaPartie.getCoupJoueur(), this->LaPartie.getCoupMachine());
+    gagnant=LaPartie.determinerGagnant();
+    LaPartie.majScores(gagnant);
+    Score.setNum(LaPartie.getScoreJoueur());
+    ui->lScoreJoueur->setText(Score);
+    Score.setNum(LaPartie.getScoreMachine());
+    ui->lScoreMachine->setText(Score);
+}
+
+void ChifoumiVue::envoiePierre()
+{
+    char gagnant;
+    QString Score;
+    this->LaPartie.setCoupJoueur(Chifoumi::pierre);
+    LaPartie.genererUnCoup();
+    miseAJourInterface(this->LaPartie.getCoupJoueur(), this->LaPartie.getCoupMachine());
+    gagnant=LaPartie.determinerGagnant();
+    LaPartie.majScores(gagnant);
+    Score.setNum(LaPartie.getScoreJoueur());
+    ui->lScoreJoueur->setText(Score);
+    Score.setNum(LaPartie.getScoreMachine());
+    ui->lScoreMachine->setText(Score);
+}
+>>>>>>> fabf1119779f2764e9e77a199198cea1f8b3a1f7
 
 void ChifoumiVue::miseAJourInterface(Chifoumi::UnCoup coupJoueur, Chifoumi::UnCoup coupMachine)
 {
@@ -49,6 +104,7 @@ void ChifoumiVue::miseAJourInterface(Chifoumi::UnCoup coupJoueur, Chifoumi::UnCo
 
 }
 
+<<<<<<< HEAD
 void ChifoumiVue::majScoreJoueur(QString score)
 {
     ui->lScoreJoueur->setText(score);
@@ -84,3 +140,14 @@ void ChifoumiVue::nvllepartie()
     ui->lFigureMachine->setPixmap(QPixmap(":/chifoumi/rien_115.png"));
 }
 
+=======
+void ChifoumiVue::nouvellePartie()
+{
+    ui->lScoreJoueur->setText("0");
+    ui->lScoreMachine->setText("0");
+    LaPartie.initCoups();
+    LaPartie.initScores();
+    ui->lFigureJoueur->setPixmap(QPixmap(":/chifoumi/rien_115.png"));
+    ui->lFigureMachine->setPixmap(QPixmap(":/chifoumi/rien_115.png"));
+}
+>>>>>>> fabf1119779f2764e9e77a199198cea1f8b3a1f7
