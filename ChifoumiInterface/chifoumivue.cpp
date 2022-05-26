@@ -8,61 +8,14 @@ ChifoumiVue::ChifoumiVue(QWidget *parent)
     , ui(new Ui::ChifoumiVue)
 {
     ui->setupUi(this);
-    connect(ui->bCiseau, SIGNAL(clicked()), this, SLOT(envoieCiseau()));
-    connect(ui->bPapier, SIGNAL(clicked()), this, SLOT(envoiePapier()));
-    connect(ui->bPierre, SIGNAL(clicked()), this, SLOT(envoiePierre()));
-    connect(ui->bNewGame, SIGNAL(clicked()), this, SLOT(nouvellePartie()));
-}
 
+}
 ChifoumiVue::~ChifoumiVue()
 {
     delete ui;
 }
 
-void ChifoumiVue::envoieCiseau()
-{
-    char gagnant;
-    QString Score;
-    this->LaPartie.setCoupJoueur(Chifoumi::ciseau);
-    LaPartie.genererUnCoup();
-    miseAJourInterface(this->LaPartie.getCoupJoueur(), this->LaPartie.getCoupMachine());
-    gagnant=LaPartie.determinerGagnant();
-    LaPartie.majScores(gagnant);
-    Score.setNum(LaPartie.getScoreJoueur());
-    ui->lScoreJoueur->setText(Score);
-    Score.setNum(LaPartie.getScoreMachine());
-    ui->lScoreMachine->setText(Score);
-}
 
-void ChifoumiVue::envoiePapier()
-{
-    char gagnant;
-    QString Score;
-    this->LaPartie.setCoupJoueur(Chifoumi::papier);
-    LaPartie.genererUnCoup();
-    miseAJourInterface(this->LaPartie.getCoupJoueur(), this->LaPartie.getCoupMachine());
-    gagnant=LaPartie.determinerGagnant();
-    LaPartie.majScores(gagnant);
-    Score.setNum(LaPartie.getScoreJoueur());
-    ui->lScoreJoueur->setText(Score);
-    Score.setNum(LaPartie.getScoreMachine());
-    ui->lScoreMachine->setText(Score);
-}
-
-void ChifoumiVue::envoiePierre()
-{
-    char gagnant;
-    QString Score;
-    this->LaPartie.setCoupJoueur(Chifoumi::pierre);
-    LaPartie.genererUnCoup();
-    miseAJourInterface(this->LaPartie.getCoupJoueur(), this->LaPartie.getCoupMachine());
-    gagnant=LaPartie.determinerGagnant();
-    LaPartie.majScores(gagnant);
-    Score.setNum(LaPartie.getScoreJoueur());
-    ui->lScoreJoueur->setText(Score);
-    Score.setNum(LaPartie.getScoreMachine());
-    ui->lScoreMachine->setText(Score);
-}
 
 void ChifoumiVue::miseAJourInterface(Chifoumi::UnCoup coupJoueur, Chifoumi::UnCoup coupMachine)
 {
@@ -96,12 +49,38 @@ void ChifoumiVue::miseAJourInterface(Chifoumi::UnCoup coupJoueur, Chifoumi::UnCo
 
 }
 
+void ChifoumiVue::majScoreJoueur(QString score)
+{
+    ui->lScoreJoueur->setText(score);
+}
+
+void ChifoumiVue::majScoreMachine(QString score)
+{
+    ui->lScoreMachine->setText(score);
+}
+
+void ChifoumiVue::nvelleConnexion(QObject *c)
+{
+    QObject::connect(ui->bCiseau, SIGNAL(clicked()), c, SLOT(envoieCiseau()));
+    QObject::connect(ui->bPapier, SIGNAL(clicked()), c, SLOT(envoiePapier()));
+    QObject::connect(ui->bPierre, SIGNAL(clicked()), c, SLOT(envoiePierre()));
+    QObject::connect(ui->bNewGame, SIGNAL(clicked()), c, SLOT(nouvellePartie()));
+}
+
+void ChifoumiVue::supprConnexion(QObject *c)
+{
+    QObject::disconnect(ui->bCiseau, SIGNAL(clicked()), c, SLOT(envoieCiseau()));
+    QObject::disconnect(ui->bPapier, SIGNAL(clicked()), c, SLOT(envoiePapier()));
+    QObject::disconnect(ui->bPierre, SIGNAL(clicked()), c, SLOT(envoiePierre()));
+    QObject::disconnect(ui->bNewGame, SIGNAL(clicked()), c, SLOT(nouvellePartie()));
+}
+
+
 void ChifoumiVue::nouvellePartie()
 {
     ui->lScoreJoueur->setText("0");
     ui->lScoreMachine->setText("0");
-    LaPartie.initCoups();
-    LaPartie.initScores();
     ui->lFigureJoueur->setPixmap(QPixmap(":/chifoumi/rien_115.png"));
     ui->lFigureMachine->setPixmap(QPixmap(":/chifoumi/rien_115.png"));
 }
+
