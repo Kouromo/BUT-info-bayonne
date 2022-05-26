@@ -19,6 +19,7 @@ public slots:
     void envoiePierre();
     void envoiePapier();
     void nouvellePartie();
+    void aPropos();
 private:
     Chifoumi *LeModele;
     ChifoumiVue *laVue;

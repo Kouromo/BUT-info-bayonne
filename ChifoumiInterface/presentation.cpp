@@ -74,5 +74,12 @@ void presentation::envoiePapier()
 
 void presentation::nouvellePartie()
 {
+    LeModele->initScores();
+    LeModele->initCoups();
     laVue->nouvellePartie();
+}
+
+void presentation::aPropos()
+{
+    laVue->txtApropos();
 }

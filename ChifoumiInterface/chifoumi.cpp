@@ -80,6 +80,8 @@ char Chifoumi::determinerGagnant()
         case ciseau:
             gagnantARetourner='M';
             break;
+        default:
+            break;
         }
         break;
     case ciseau:

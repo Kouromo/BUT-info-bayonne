@@ -21,6 +21,7 @@ public:
     void majScoreJoueur(QString);
     void majScoreMachine(QString);
     void nouvellePartie();
+    void txtApropos();
 
     // La Vue notifie la Présentation - Mise en oeuvre :
     // les signals des éléments de la vue seront connectés à des slots de la Présentation
