@@ -13,6 +13,7 @@ public:
     explicit presentation(QObject *parent = nullptr);
 private:
     int tps;
+    bool pause;
 public:
     Chifoumi* getChifoumi();
     ChifoumiVue* getchifoumiVue();
@@ -25,6 +26,7 @@ public slots:
     void nouvellePartie();
     void aPropos();
     void compteRebours();
+    void pauseCompteur();
 private:
     Chifoumi *LeModele;
     ChifoumiVue *laVue;

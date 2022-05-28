@@ -101,7 +101,8 @@ void presentation::nouvellePartie()
     LeModele->initScores();
     LeModele->initCoups();
     laVue->nouvellePartie();
-    tps = laVue->secondesMax;
+    tps = laVue->secondesMax; // +1 ?
+    bool pause = false;
 }
 
 void presentation::aPropos()
@@ -132,6 +133,21 @@ void presentation::compteRebours()
         }
 
         laVue->messageFinTemps(gagnant, scoreGagnant);
+    }
+}
+
+void presentation::pauseCompteur()
+{
+    if (pause == false)
+    {
+        pause = true;
+        laVue->arretCompteur();
+
+    }
+    else
+    {
+        pause = false;
+        laVue->repriseCompteur();
     }
 }
 

@@ -86,6 +86,7 @@ void ChifoumiVue::nvelleConnexion(QObject *c)
     QObject::connect(ui->bNewGame, SIGNAL(clicked()), c, SLOT(nouvellePartie()));
     QObject::connect(ui->actionA_propos_de, SIGNAL(triggered()), c, SLOT(aPropos()));
     QObject::connect(chrono, SIGNAL(timeout()), c, SLOT(compteRebours()));
+    QObject::connect(ui->bPause, SIGNAL(clicked()), c, SLOT(pauseCompteur()));
 }
 
 void ChifoumiVue::supprConnexion(QObject *c)
@@ -96,6 +97,7 @@ void ChifoumiVue::supprConnexion(QObject *c)
     QObject::disconnect(ui->bNewGame, SIGNAL(clicked()), c, SLOT(nouvellePartie()));
     QObject::disconnect(ui->actionA_propos_de, SIGNAL(triggered()), c, SLOT(aPropos()));
     QObject::disconnect(chrono, SIGNAL(timeout()), c, SLOT(compteRebours()));
+    QObject::disconnect(ui->bPause, SIGNAL(clicked()), c, SLOT(pauseCompteur()));
 }
 
 void ChifoumiVue::messageVictoire(char personne, unsigned short int temps)
@@ -103,6 +105,7 @@ void ChifoumiVue::messageVictoire(char personne, unsigned short int temps)
     ui->bCiseau->setEnabled(false);
     ui->bPapier->setEnabled(false);
     ui->bPierre->setEnabled(false);
+    ui->bPause->setEnabled(false);
     chrono->stop();
     unsigned short int tpsRestant = secondesMax - temps;
 
@@ -128,6 +131,7 @@ void ChifoumiVue::messageFinTemps(char resultat, unsigned short int score)
     ui->bCiseau->setEnabled(false);
     ui->bPapier->setEnabled(false);
     ui->bPierre->setEnabled(false);
+    ui->bPause->setEnabled(false);
     chrono->stop();
     QMessageBox msg;
     msg.setIcon(QMessageBox::Information);
@@ -162,6 +166,26 @@ void ChifoumiVue::tempsCompteur(unsigned int temps)
     ui->lSecondes->setText(tempsRestant);
 }
 
+void ChifoumiVue::arretCompteur()
+{
+    chrono->stop();
+    ui->bPause->setText("Reprise jeu");
+    ui->bCiseau->setEnabled(false);
+    ui->bPapier->setEnabled(false);
+    ui->bPierre->setEnabled(false);
+    ui->bNewGame->setEnabled(false);
+}
+
+void ChifoumiVue::repriseCompteur()
+{
+    chrono->start();
+    ui->bPause->setText("Pause");
+    ui->bCiseau->setEnabled(true);
+    ui->bPapier->setEnabled(true);
+    ui->bPierre->setEnabled(true);
+    ui->bNewGame->setEnabled(true);
+}
+
 
 
 void ChifoumiVue::nouvellePartie()
@@ -173,6 +197,7 @@ void ChifoumiVue::nouvellePartie()
     ui->bCiseau->setEnabled(true);
     ui->bPapier->setEnabled(true);
     ui->bPierre->setEnabled(true);
+    ui->bPause->setEnabled(true);
     chrono->start(); // convertion en mili-secondes
 
 }

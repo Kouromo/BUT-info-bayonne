@@ -33,6 +33,8 @@ public:
     void messageVictoire(char, unsigned short int);
     void messageFinTemps(char, unsigned short int);
     void tempsCompteur(unsigned int);
+    void arretCompteur();
+    void repriseCompteur();
 
 private:
     Ui::ChifoumiVue *ui;

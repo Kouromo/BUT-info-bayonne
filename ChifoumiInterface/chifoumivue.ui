@@ -340,6 +340,16 @@
             </property>
            </spacer>
           </item>
+          <item>
+           <widget class="QPushButton" name="bPause">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Pause</string>
+            </property>
+           </widget>
+          </item>
           <item alignment="Qt::AlignRight">
            <widget class="QPushButton" name="bNewGame">
             <property name="text">
