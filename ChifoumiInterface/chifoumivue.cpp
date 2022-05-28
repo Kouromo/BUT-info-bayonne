@@ -9,6 +9,9 @@ ChifoumiVue::ChifoumiVue(QWidget *parent)
 {
     ui->setupUi(this);
 
+    QString pointVictoire;
+    pointVictoire.setNum(pointMax);
+    ui->lPointGagnant->setText(pointVictoire);
 }
 ChifoumiVue::~ChifoumiVue()
 {
@@ -77,6 +80,27 @@ void ChifoumiVue::supprConnexion(QObject *c)
     QObject::disconnect(ui->actionA_propos_de, SIGNAL(triggered()), c, SLOT(aPropos()));
 }
 
+void ChifoumiVue::messageVictoire(char personne)
+{
+    ui->bCiseau->setEnabled(false);
+    ui->bPapier->setEnabled(false);
+    ui->bPierre->setEnabled(false);
+
+    QMessageBox msg;
+    msg.setWindowTitle("Fin de partie");
+    if (personne == 'M')
+    {
+        QString message = QString("Bravo La Machine ! Vous gagnez avec %1 points.").arg(pointMax);
+        msg.setText(message);
+    }
+    else
+    {
+        QString message = QString("Bravo Vous ! Vous gagnez avec %1 points.").arg(pointMax);
+        msg.setText(message);
+    }
+    msg.exec();
+
+}
 
 void ChifoumiVue::nouvellePartie()
 {
@@ -94,7 +118,7 @@ void ChifoumiVue::txtApropos()
 {
     QMessageBox msg;
     msg.setWindowTitle("A propos de cette application");
-    msg.setText("Jeu du Chifoumi v3 \r\n"" Créé le  04/04/2022 par ALVES Matéo et JOUVE Noé TD2 - TP4 ");
+    msg.setText("Jeu du Chifoumi v4 \r\n"" Créé le  04/04/2022 par ALVES Matéo et JOUVE Noé TD2 - TP4 ");
     msg.exec();
 }
 

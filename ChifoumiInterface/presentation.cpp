@@ -40,6 +40,14 @@ void presentation::envoieCiseau()
     laVue->majScoreJoueur(Score);
     Score.setNum(LeModele->getScoreMachine());
     laVue->majScoreMachine(Score);
+    if (LeModele->getScoreJoueur() == laVue->pointMax)
+    {
+        laVue->messageVictoire('J');
+    }
+    if (LeModele->getScoreMachine() == laVue->pointMax)
+    {
+        laVue->messageVictoire('M');
+    }
 }
 
 void presentation::envoiePierre()
@@ -55,6 +63,14 @@ void presentation::envoiePierre()
     laVue->majScoreJoueur(Score);
     Score.setNum(LeModele->getScoreMachine());
     laVue->majScoreMachine(Score);
+    if (LeModele->getScoreJoueur() == laVue->pointMax)
+    {
+        laVue->messageVictoire('J');
+    }
+    if (LeModele->getScoreMachine() == laVue->pointMax)
+    {
+        laVue->messageVictoire('M');
+    }
 }
 
 void presentation::envoiePapier()
@@ -70,6 +86,14 @@ void presentation::envoiePapier()
     laVue->majScoreJoueur(Score);
     Score.setNum(LeModele->getScoreMachine());
     laVue->majScoreMachine(Score);
+    if (LeModele->getScoreJoueur() == laVue->pointMax)
+    {
+        laVue->messageVictoire('J');
+    }
+    if (LeModele->getScoreMachine() == laVue->pointMax)
+    {
+        laVue->messageVictoire('M');
+    }
 }
 
 void presentation::nouvellePartie()
@@ -83,3 +107,4 @@ void presentation::aPropos()
 {
     laVue->txtApropos();
 }
+

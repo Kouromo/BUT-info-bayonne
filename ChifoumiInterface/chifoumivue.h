@@ -16,18 +16,19 @@ public:
     ChifoumiVue(QWidget *parent = nullptr);
     ~ChifoumiVue();
 public:
+    unsigned short int pointMax = 5; // Nombre de points pour gagner
+public:
     // ordres reçus par la Présentation
     void miseAJourInterface(Chifoumi::UnCoup, Chifoumi::UnCoup);
     void majScoreJoueur(QString);
     void majScoreMachine(QString);
     void nouvellePartie();
     void txtApropos();
-
     // La Vue notifie la Présentation - Mise en oeuvre :
     // les signals des éléments de la vue seront connectés à des slots de la Présentation
     void nvelleConnexion(QObject *c);
     void supprConnexion(QObject *c);
-
+    void messageVictoire(char);
 
 private:
     Ui::ChifoumiVue *ui;

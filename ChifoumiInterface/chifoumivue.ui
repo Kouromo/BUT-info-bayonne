@@ -30,7 +30,7 @@
           <item row="0" column="3" alignment="Qt::AlignHCenter">
            <widget class="QLabel" name="lMachine">
             <property name="text">
-             <string>Machine</string>
+             <string>La Machine</string>
             </property>
            </widget>
           </item>
@@ -104,19 +104,6 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="2">
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
           <item row="2" column="3">
            <widget class="QLabel" name="lFigureMachine">
             <property name="maximumSize">
@@ -136,19 +123,6 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="2">
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
           <item row="2" column="0">
            <widget class="QLabel" name="lFigureJoueur">
             <property name="maximumSize">
@@ -165,6 +139,20 @@
             </property>
             <property name="scaledContents">
              <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2" alignment="Qt::AlignHCenter">
+           <widget class="QLabel" name="lGagne">
+            <property name="text">
+             <string>Gagnant à</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2" alignment="Qt::AlignHCenter">
+           <widget class="QLabel" name="lPointGagnant">
+            <property name="text">
+             <string>points</string>
             </property>
            </widget>
           </item>
