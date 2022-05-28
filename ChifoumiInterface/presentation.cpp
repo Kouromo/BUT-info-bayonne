@@ -42,11 +42,11 @@ void presentation::envoieCiseau()
     laVue->majScoreMachine(Score);
     if (LeModele->getScoreJoueur() == laVue->pointMax)
     {
-        laVue->messageVictoire('J');
+        laVue->messageVictoire('J', tps);
     }
     if (LeModele->getScoreMachine() == laVue->pointMax)
     {
-        laVue->messageVictoire('M');
+        laVue->messageVictoire('M', tps);
     }
 }
 
@@ -65,11 +65,11 @@ void presentation::envoiePierre()
     laVue->majScoreMachine(Score);
     if (LeModele->getScoreJoueur() == laVue->pointMax)
     {
-        laVue->messageVictoire('J');
+        laVue->messageVictoire('J', tps);
     }
     if (LeModele->getScoreMachine() == laVue->pointMax)
     {
-        laVue->messageVictoire('M');
+        laVue->messageVictoire('M', tps);
     }
 }
 
@@ -88,11 +88,11 @@ void presentation::envoiePapier()
     laVue->majScoreMachine(Score);
     if (LeModele->getScoreJoueur() == laVue->pointMax)
     {
-        laVue->messageVictoire('J');
+        laVue->messageVictoire('J', tps);
     }
     if (LeModele->getScoreMachine() == laVue->pointMax)
     {
-        laVue->messageVictoire('M');
+        laVue->messageVictoire('M', tps);
     }
 }
 
@@ -101,10 +101,38 @@ void presentation::nouvellePartie()
     LeModele->initScores();
     LeModele->initCoups();
     laVue->nouvellePartie();
+    tps = laVue->secondesMax;
 }
 
 void presentation::aPropos()
 {
     laVue->txtApropos();
 }
+
+void presentation::compteRebours()
+{
+    if (tps > 0) // décrémentation du compteur toutes les secondes
+    {
+        tps--;
+        laVue->tempsCompteur(tps);
+    }
+    else // tps = 0 alors
+    {
+        char gagnant = 'N';
+        int scoreGagnant = LeModele->getScoreJoueur();
+        if (LeModele->getScoreJoueur() > LeModele->getScoreMachine())
+        {
+            gagnant = 'J';
+            scoreGagnant = LeModele->getScoreJoueur();
+        }
+        if (LeModele->getScoreMachine() >LeModele->getScoreJoueur())
+        {
+            gagnant = 'M';
+            scoreGagnant = LeModele->getScoreMachine();
+        }
+
+        laVue->messageFinTemps(gagnant, scoreGagnant);
+    }
+}
+
 

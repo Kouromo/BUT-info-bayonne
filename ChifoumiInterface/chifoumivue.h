@@ -3,6 +3,7 @@
 #include "chifoumi.h"
 #include <QMainWindow>
 #include <cstdlib>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class ChifoumiVue; }
@@ -16,7 +17,8 @@ public:
     ChifoumiVue(QWidget *parent = nullptr);
     ~ChifoumiVue();
 public:
-    unsigned short int pointMax = 5; // Nombre de points pour gagner
+    unsigned short int pointMax = 5; // Nombre de points pour gagner (5 points par défaut)
+    unsigned short int secondesMax = 30; //Temps du timer en mili-secondes (30 secondes par défaut)
 public:
     // ordres reçus par la Présentation
     void miseAJourInterface(Chifoumi::UnCoup, Chifoumi::UnCoup);
@@ -28,10 +30,12 @@ public:
     // les signals des éléments de la vue seront connectés à des slots de la Présentation
     void nvelleConnexion(QObject *c);
     void supprConnexion(QObject *c);
-    void messageVictoire(char);
+    void messageVictoire(char, unsigned short int);
+    void messageFinTemps(char, unsigned short int);
+    void tempsCompteur(unsigned int);
 
 private:
     Ui::ChifoumiVue *ui;
-
+    QTimer *chrono = new QTimer(this);
 };
 #endif // CHIFOUMIVUE_H

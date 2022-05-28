@@ -4,11 +4,15 @@
 #include <QObject>
 #include "chifoumi.h"
 #include "chifoumivue.h"
+#include "QTimer"
+
 class presentation : public QObject
 {
     Q_OBJECT
 public:
     explicit presentation(QObject *parent = nullptr);
+private:
+    int tps;
 public:
     Chifoumi* getChifoumi();
     ChifoumiVue* getchifoumiVue();
@@ -20,6 +24,7 @@ public slots:
     void envoiePapier();
     void nouvellePartie();
     void aPropos();
+    void compteRebours();
 private:
     Chifoumi *LeModele;
     ChifoumiVue *laVue;
