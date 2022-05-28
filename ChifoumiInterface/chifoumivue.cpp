@@ -119,7 +119,7 @@ void ChifoumiVue::txtApropos()
 {
     QMessageBox msg;
     msg.setWindowTitle("A propos de cette application");
-    msg.setText("Jeu du Chifoumi v5 \r\n"" Créé le  04/04/2022 par ALVES Matéo et JOUVE Noé TD2 - TP4 ");
+    msg.setText("Jeu du Chifoumi v4 \r\n"" Créé le  04/04/2022 par ALVES Matéo et JOUVE Noé TD2 - TP4 ");
     msg.exec();
 }
 
