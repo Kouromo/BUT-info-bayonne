@@ -40,13 +40,13 @@ void presentation::envoieCiseau()
     laVue->majScoreJoueur(Score);
     Score.setNum(LeModele->getScoreMachine());
     laVue->majScoreMachine(Score);
-    if (LeModele->getScoreJoueur() == laVue->pointMax)
+    if (LeModele->getScoreJoueur() == laVue->pointMax)     // vérif victoire du joueur
     {
-        laVue->messageVictoire('J', tps);
+        laVue->messageVictoire('J', tps); //envoie à la vue le temps restant
     }
-    if (LeModele->getScoreMachine() == laVue->pointMax)
+    if (LeModele->getScoreMachine() == laVue->pointMax) // vérif victoire machine
     {
-        laVue->messageVictoire('M', tps);
+        laVue->messageVictoire('M', tps); //envoie à la vue le temps restant
     }
 }
 
@@ -63,13 +63,13 @@ void presentation::envoiePierre()
     laVue->majScoreJoueur(Score);
     Score.setNum(LeModele->getScoreMachine());
     laVue->majScoreMachine(Score);
-    if (LeModele->getScoreJoueur() == laVue->pointMax)
+    if (LeModele->getScoreJoueur() == laVue->pointMax) // vérif victoire du joueur
     {
-        laVue->messageVictoire('J', tps);
+        laVue->messageVictoire('J', tps); //envoie à la vue le temps restant
     }
-    if (LeModele->getScoreMachine() == laVue->pointMax)
+    if (LeModele->getScoreMachine() == laVue->pointMax) // vérif victoire machine
     {
-        laVue->messageVictoire('M', tps);
+        laVue->messageVictoire('M', tps); //envoie à la vue le temps restant
     }
 }
 
@@ -86,23 +86,23 @@ void presentation::envoiePapier()
     laVue->majScoreJoueur(Score);
     Score.setNum(LeModele->getScoreMachine());
     laVue->majScoreMachine(Score);
-    if (LeModele->getScoreJoueur() == laVue->pointMax)
+    if (LeModele->getScoreJoueur() == laVue->pointMax) // vérif victoire du joueur
     {
-        laVue->messageVictoire('J', tps);
+        laVue->messageVictoire('J', tps); //envoie à la vue le temps restant
     }
-    if (LeModele->getScoreMachine() == laVue->pointMax)
+    if (LeModele->getScoreMachine() == laVue->pointMax) // vérif victoire machine
     {
-        laVue->messageVictoire('M', tps);
+        laVue->messageVictoire('M', tps); //envoie à la vue le temps restant
     }
 }
 
-void presentation::nouvellePartie()
+void presentation::nouvellePartie() // lancement d'une nouvelle partie
 {
     LeModele->initScores();
     LeModele->initCoups();
     laVue->nouvellePartie();
-    tps = laVue->secondesMax; // +1 ?
-    bool pause = false;
+    tps = laVue->secondesMax; // à l'exécution défini à tps le nombre de secondes du compte à rebours(+1 ?)
+    bool pause = false; // état de jeu en cours au lancement
 }
 
 void presentation::aPropos()
@@ -117,16 +117,16 @@ void presentation::compteRebours()
         tps--;
         laVue->tempsCompteur(tps);
     }
-    else // tps = 0 alors
+    else // tps = 0 alors temps écoulé
     {
-        char gagnant = 'N';
-        int scoreGagnant = LeModele->getScoreJoueur();
-        if (LeModele->getScoreJoueur() > LeModele->getScoreMachine())
+        char gagnant = 'N'; // Null par défaut
+        int scoreGagnant = LeModele->getScoreJoueur(); // Score d'une égalité
+        if (LeModele->getScoreJoueur() > LeModele->getScoreMachine()) // scoreJoueur > scoreMachine
         {
             gagnant = 'J';
             scoreGagnant = LeModele->getScoreJoueur();
         }
-        if (LeModele->getScoreMachine() >LeModele->getScoreJoueur())
+        if (LeModele->getScoreMachine() >LeModele->getScoreJoueur()) // scoreMachine > scoreJoueur
         {
             gagnant = 'M';
             scoreGagnant = LeModele->getScoreMachine();
@@ -136,17 +136,17 @@ void presentation::compteRebours()
     }
 }
 
-void presentation::pauseCompteur()
+void presentation::pauseCompteur() // slot bouton compteur
 {
     if (pause == false)
     {
-        pause = true;
+        pause = true; // changement de l'état du jeu
         laVue->arretCompteur();
 
     }
     else
     {
-        pause = false;
+        pause = false; // changement de l'état du jeu
         laVue->repriseCompteur();
     }
 }

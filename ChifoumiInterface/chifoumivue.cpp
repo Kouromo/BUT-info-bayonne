@@ -27,7 +27,7 @@ ChifoumiVue::ChifoumiVue(QWidget *parent)
     ui->lTemps->setStyleSheet("QLabel {color : grey;}");
     ui->lSecondes->setStyleSheet("QLabel {color : grey;}");
 
-    chrono->setInterval(1000);
+    chrono->setInterval(1000); // pulsation toutes les secondes
 }
 ChifoumiVue::~ChifoumiVue()
 {
@@ -100,24 +100,25 @@ void ChifoumiVue::supprConnexion(QObject *c)
     QObject::disconnect(ui->bPause, SIGNAL(clicked()), c, SLOT(pauseCompteur()));
 }
 
-void ChifoumiVue::messageVictoire(char personne, unsigned short int temps)
+void ChifoumiVue::messageVictoire(char personne, unsigned short int temps) // Victoire atteinte du pointMax défini
 {
+    // désactivation des boutons de jeu
     ui->bCiseau->setEnabled(false);
     ui->bPapier->setEnabled(false);
     ui->bPierre->setEnabled(false);
     ui->bPause->setEnabled(false);
-    chrono->stop();
-    unsigned short int tpsRestant = secondesMax - temps;
+    chrono->stop(); // arrêt du chrono
+    unsigned short int tpsRestant = secondesMax - temps; // calcul du temps de jeu
 
     QMessageBox msg;
     msg.setIcon(QMessageBox::Information);
     msg.setWindowTitle("Fin de partie gagnant");
-    if (personne == 'M')
+    if (personne == 'M') // Victoire Machine
     {
         QString message = QString("Bravo La Machine ! Vous gagnez avec %1 points en %2 secondes.").arg(pointMax).arg(tpsRestant);
         msg.setText(message);
     }
-    else
+    else // Victoire Joueur
     {
         QString message = QString("Bravo Vous ! Vous gagnez avec %1 points en %2 secondes.").arg(pointMax).arg(tpsRestant);
         msg.setText(message);
@@ -126,19 +127,21 @@ void ChifoumiVue::messageVictoire(char personne, unsigned short int temps)
 
 }
 
-void ChifoumiVue::messageFinTemps(char resultat, unsigned short int score)
+void ChifoumiVue::messageFinTemps(char resultat, unsigned short int score) // Temps écoulé défini par secondesMax
 {
+    // désactivation des boutons de jeu
     ui->bCiseau->setEnabled(false);
     ui->bPapier->setEnabled(false);
     ui->bPierre->setEnabled(false);
     ui->bPause->setEnabled(false);
-    chrono->stop();
+    chrono->stop(); // arrêt du chrono
+
     QMessageBox msg;
     msg.setIcon(QMessageBox::Information);
     QString personne;
-    if (resultat == 'J')
+    if (resultat == 'J') // Victoire Joueur
         personne = "Vous terminez";
-    if (resultat == 'M')
+    if (resultat == 'M') // Victoire Machine
         personne = "La machine termine";
     
     if (resultat == 'N') //  ex aequo
@@ -148,7 +151,7 @@ void ChifoumiVue::messageFinTemps(char resultat, unsigned short int score)
         msg.setText(message);
         msg.exec();
     }
-    else
+    else // Victoire d'un des joueurs (même message)
     {
         msg.setIcon(QMessageBox::Information);
         msg.setWindowTitle("Fin de partie temps : 1 avantage");
@@ -159,14 +162,14 @@ void ChifoumiVue::messageFinTemps(char resultat, unsigned short int score)
 
 }
 
-void ChifoumiVue::tempsCompteur(unsigned int temps)
-{
+void ChifoumiVue::tempsCompteur(unsigned int temps) // afiche le temps restant du compteur sur la vue
+{                                                   // en prennant pour paramètre le temps restant en secondes
     QString tempsRestant;
     tempsRestant.setNum(temps);
     ui->lSecondes->setText(tempsRestant);
 }
 
-void ChifoumiVue::arretCompteur()
+void ChifoumiVue::arretCompteur() // arrête le compte à rebours et désactive les boutons de jeu
 {
     chrono->stop();
     ui->bPause->setText("Reprise jeu");
@@ -176,7 +179,7 @@ void ChifoumiVue::arretCompteur()
     ui->bNewGame->setEnabled(false);
 }
 
-void ChifoumiVue::repriseCompteur()
+void ChifoumiVue::repriseCompteur() // reprend le compte à rebours et réactive les boutons de jeu
 {
     chrono->start();
     ui->bPause->setText("Pause");
