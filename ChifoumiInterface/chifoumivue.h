@@ -3,6 +3,8 @@
 #include "chifoumi.h"
 #include <QMainWindow>
 #include <cstdlib>
+#include <QTimer>
+#include "parametres.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class ChifoumiVue; }
@@ -15,36 +17,47 @@ class ChifoumiVue : public QMainWindow
 public:
     ChifoumiVue(QWidget *parent = nullptr);
     ~ChifoumiVue();
-<<<<<<< HEAD
 public:
+    // VARIABLES PUBLIQUES
+    QString nom; // Nom auquel le joueur s'identifie
+    unsigned short int pointMax; // Nombre de points pour gagner (5 points par défaut)
+    unsigned short int secondesMax; //Temps du timer en mili-secondes (30 secondes par défaut)
+
     // ordres reçus par la Présentation
+    /**
+     * @brief miseAJourInterface
+     * Change les images dans les vignettes représentant le joueur et la machine
+     */
     void miseAJourInterface(Chifoumi::UnCoup, Chifoumi::UnCoup);
+    /**
+     * @brief les majScore mettent à joueur le score montré sur l'interface utilisateur
+     */
     void majScoreJoueur(QString);
     void majScoreMachine(QString);
-    void nvllepartie();
-
+    void nouvellePartie();
+    void txtApropos(); // Message Box de texte pour afficher les informations de l'application
     // La Vue notifie la Présentation - Mise en oeuvre :
     // les signals des éléments de la vue seront connectés à des slots de la Présentation
     void nvelleConnexion(QObject *c);
     void supprConnexion(QObject *c);
-=======
-public slots:
-    void envoieCiseau();
-    void envoiePierre();
-    void envoiePapier();
-    void nouvellePartie();
-
-public:
-    void miseAJourInterface(Chifoumi::UnCoup, Chifoumi::UnCoup);
->>>>>>> fabf1119779f2764e9e77a199198cea1f8b3a1f7
-
-
+    /**
+     * @brief messageVictoire
+     * Permet de passer à l'état finPartie lorsque le score atteint celui de la variable pointMax
+     */
+    void messageVictoire(char, unsigned short int);
+    /**
+     * @brief messageFinTemps
+     * Permet de passer à l'état finPartie lorsque le temps est écoulé
+     */
+    void messageFinTemps(char, unsigned short int);
+    void tempsCompteur(unsigned int); // Mise à jour du temps affiché
+    void arretCompteur(); // Arrête le timer et passe à l'état partieEnPause
+    void repriseCompteur(); // Reprend le jeu et repasse à l'état partieEnCours
+    void parametrage(); // Appel de la fenêtre de dialogue paramétrage
+    void affichagePointsTemps(int, int); // Modifie le temps et le nombre max de points à atteindre
 private:
     Ui::ChifoumiVue *ui;
-<<<<<<< HEAD
-
-=======
-    Chifoumi LaPartie;
->>>>>>> fabf1119779f2764e9e77a199198cea1f8b3a1f7
+    QTimer *chrono = new QTimer(this);
+    parametres* dlgParam;
 };
 #endif // CHIFOUMIVUE_H

@@ -12,15 +12,18 @@ SOURCES += \
     chifoumi.cpp \
     main.cpp \
     chifoumivue.cpp \
+    parametres.cpp \
     presentation.cpp
 
 HEADERS += \
     chifoumi.h \
     chifoumivue.h \
+    parametres.h \
     presentation.h
 
 FORMS += \
-    chifoumivue.ui
+    chifoumivue.ui \
+    parametres.ui
 
 TRANSLATIONS += \
     ChifoumiInterface_fr_FR.ts

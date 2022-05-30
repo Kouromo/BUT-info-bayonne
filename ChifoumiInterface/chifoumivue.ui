@@ -29,13 +29,25 @@
          <layout class="QGridLayout" name="gridLayout_2">
           <item row="0" column="3" alignment="Qt::AlignHCenter">
            <widget class="QLabel" name="lMachine">
+            <property name="font">
+             <font>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
             <property name="text">
-             <string>Machine</string>
+             <string>La Machine</string>
             </property>
            </widget>
           </item>
           <item row="0" column="0" alignment="Qt::AlignHCenter">
            <widget class="QLabel" name="lJoueur">
+            <property name="font">
+             <font>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
             <property name="text">
              <string>Vous</string>
             </property>
@@ -43,79 +55,29 @@
           </item>
           <item row="1" column="3" alignment="Qt::AlignHCenter">
            <widget class="QLabel" name="lScoreMachine">
+            <property name="font">
+             <font>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
             <property name="text">
              <string>0</string>
             </property>
            </widget>
-          </item>
-          <item row="2" column="2">
-           <layout class="QHBoxLayout" name="hLayoutDuel">
-            <item>
-             <spacer name="horizontalSpacer_4">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QLabel" name="lImageDuel">
-              <property name="maximumSize">
-               <size>
-                <width>50</width>
-                <height>50</height>
-               </size>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap resource="../images/ressourcesChifoumi.qrc">:/chifoumi/versus_70.png</pixmap>
-              </property>
-              <property name="scaledContents">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_3">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
           </item>
           <item row="1" column="0" alignment="Qt::AlignHCenter">
            <widget class="QLabel" name="lScoreJoueur">
+            <property name="font">
+             <font>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
             <property name="text">
              <string>0</string>
             </property>
            </widget>
-          </item>
-          <item row="0" column="2">
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
           </item>
           <item row="2" column="3">
            <widget class="QLabel" name="lFigureMachine">
@@ -136,19 +98,6 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="2">
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
           <item row="2" column="0">
            <widget class="QLabel" name="lFigureJoueur">
             <property name="maximumSize">
@@ -167,6 +116,91 @@
              <bool>true</bool>
             </property>
            </widget>
+          </item>
+          <item row="0" column="2" alignment="Qt::AlignHCenter">
+           <widget class="QLabel" name="lGagne">
+            <property name="text">
+             <string>Gagnant à</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2" alignment="Qt::AlignHCenter">
+           <widget class="QLabel" name="lPointGagnant">
+            <property name="text">
+             <string>points</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <layout class="QHBoxLayout" name="hLayoutDuel">
+              <item>
+               <spacer name="horizontalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="lImageDuel">
+                <property name="maximumSize">
+                 <size>
+                  <width>50</width>
+                  <height>50</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="../images/ressourcesChifoumi.qrc">:/chifoumi/versus_70.png</pixmap>
+                </property>
+                <property name="scaledContents">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QLabel" name="lTemps">
+                <property name="text">
+                 <string>Tps restant (s) :</string>
+                </property>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QLabel" name="lSecondes">
+                <property name="text">
+                 <string>s</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
           </item>
          </layout>
         </item>
@@ -207,7 +241,7 @@
              <item>
               <widget class="QPushButton" name="bPierre">
                <property name="enabled">
-                <bool>true</bool>
+                <bool>false</bool>
                </property>
                <property name="minimumSize">
                 <size>
@@ -235,6 +269,9 @@
              </item>
              <item>
               <widget class="QPushButton" name="bPapier">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
                <property name="text">
                 <string/>
                </property>
@@ -252,6 +289,9 @@
              </item>
              <item>
               <widget class="QPushButton" name="bCiseau">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
                <property name="text">
                 <string/>
                </property>
@@ -300,6 +340,16 @@
             </property>
            </spacer>
           </item>
+          <item>
+           <widget class="QPushButton" name="bPause">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Pause</string>
+            </property>
+           </widget>
+          </item>
           <item alignment="Qt::AlignRight">
            <widget class="QPushButton" name="bNewGame">
             <property name="text">
@@ -328,20 +378,61 @@
     <property name="title">
      <string>Fichier</string>
     </property>
+    <addaction name="actionParam_trer"/>
+    <addaction name="actionQuitter"/>
    </widget>
    <widget class="QMenu" name="menuAide">
     <property name="title">
      <string>Aide</string>
     </property>
+    <addaction name="actionA_propos_de"/>
    </widget>
    <addaction name="menuFichier"/>
    <addaction name="menuAide"/>
   </widget>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+F3</string>
+   </property>
+  </action>
+  <action name="actionA_propos_de">
+   <property name="text">
+    <string>A propos de ....</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="actionParam_trer">
+   <property name="text">
+    <string>Paramétrer</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="../images/ressourcesChifoumi.qrc"/>
   <include location="../images/ressourcesChifoumi.qrc"/>
   <include location="../images/ressourcesChifoumi.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actionQuitter</sender>
+   <signal>triggered()</signal>
+   <receiver>ChifoumiVue</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>169</x>
+     <y>179</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
