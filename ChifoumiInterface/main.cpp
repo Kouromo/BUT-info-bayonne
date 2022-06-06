@@ -21,12 +21,12 @@ int main(int argc, char *argv[])
 
     w.miseAJourInterface(Chifoumi::rien, Chifoumi::rien);
     w.show();
-    connexion *connard= new connexion;
+    connexion *connec= new connexion;
     do
     {
-           connard->exec();
+           connec->exec();
     }
-    while(!connard->verifConnexion());
+    while(!connec->verifConnexion());
 
 
     return a.exec();

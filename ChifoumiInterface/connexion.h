@@ -16,14 +16,14 @@ public:
     explicit connexion(QWidget *parent = nullptr);
     ~connexion();
 public:
-      bool verifConnexion(); // Slot qui quand on appuie sur le bouton vérifie que l'utilisateur existe et si oui accède au jeu.
+      bool verifConnexion(); // fonction qui va vérfier quand on quitte le dialogue si on est bien connecté.
 
 private:
     Ui::connexion *ui;
     database *maDb;
 private:
-    QString getNom();
-    QString getMdp();
+    QString getNom(); // fonction qui retroune le nom entré
+    QString getMdp();// fonction qui retourne le mdp entré
 
 
 };

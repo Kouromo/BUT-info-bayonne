@@ -19,12 +19,13 @@ bool connexion::verifConnexion()
     maDb= new database;
     bool okbd= maDb->openDatabase();
     bool okReq= false;
-
+    // on teste si on est bien connecté
     if (!okbd)
     {
         return false;
     }
-    QSqlQuery maRequete("select nomJoueur, motDePasse from joueur");
+
+    QSqlQuery maRequete("select nomJoueur, motDePasse from joueur"); // on écrit la requête
    for (int i=0; maRequete.next(); i++)
    {
 

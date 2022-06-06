@@ -271,6 +271,17 @@ debug/moc_chifoumivue.cpp: ../ChifoumiInterface/chifoumivue.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QWidget \
+		../ChifoumiInterface/connexion.h \
+		../ChifoumiInterface/database.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/QSqlDatabase \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qsqldatabase.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qtsqlglobal.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qtsql-config.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/QVariant \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/QSqlQuery \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qsqlquery.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/QSqlError \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qsqlerror.h \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
 	C:\Qt\Qt5.15.2\5.15.2\mingw81_64\bin\moc.exe $(DEFINES) --include F:/BUT/Semestre2/S201/v7/build-ChifoumiInterface-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/debug/moc_predefs.h -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/mkspecs/win32-g++ -IF:/BUT/Semestre2/S201/v7/ChifoumiInterface -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtANGLE -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore -I. -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Qt5.15.2/Tools/mingw810_64/x86_64-w64-mingw32/include ..\ChifoumiInterface\chifoumivue.h -o debug\moc_chifoumivue.cpp
@@ -630,6 +641,17 @@ debug/moc_presentation.cpp: ../ChifoumiInterface/presentation.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QWidget \
+		../ChifoumiInterface/connexion.h \
+		../ChifoumiInterface/database.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/QSqlDatabase \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qsqldatabase.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qtsqlglobal.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qtsql-config.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/QVariant \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/QSqlQuery \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qsqlquery.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/QSqlError \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qsqlerror.h \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/bin/moc.exe
 	C:\Qt\Qt5.15.2\5.15.2\mingw81_64\bin\moc.exe $(DEFINES) --include F:/BUT/Semestre2/S201/v7/build-ChifoumiInterface-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/debug/moc_predefs.h -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/mkspecs/win32-g++ -IF:/BUT/Semestre2/S201/v7/ChifoumiInterface -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtANGLE -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql -IC:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore -I. -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++ -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include -IC:/Qt/Qt5.15.2/Tools/mingw810_64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed -IC:/Qt/Qt5.15.2/Tools/mingw810_64/x86_64-w64-mingw32/include ..\ChifoumiInterface\presentation.h -o debug\moc_presentation.cpp
@@ -983,6 +1005,17 @@ debug/main.o: ../ChifoumiInterface/main.cpp ../ChifoumiInterface/chifoumivue.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QWidget \
+		../ChifoumiInterface/connexion.h \
+		../ChifoumiInterface/database.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/QSqlDatabase \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qsqldatabase.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qtsqlglobal.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qtsql-config.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/QVariant \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/QSqlQuery \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qsqlquery.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/QSqlError \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qsqlerror.h \
 		../ChifoumiInterface/presentation.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/QObject \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QApplication \
@@ -1113,39 +1146,18 @@ debug/chifoumivue.o: ../ChifoumiInterface/chifoumivue.cpp ../ChifoumiInterface/c
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QWidget \
-		ui_chifoumivue.h \
+		../ChifoumiInterface/connexion.h \
+		../ChifoumiInterface/database.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/QSqlDatabase \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qsqldatabase.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qtsqlglobal.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qtsql-config.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/QVariant \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/QIcon \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QAction \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qaction.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qactiongroup.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QApplication \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/qeventloop.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/qguiapplication.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QGridLayout \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qgridlayout.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qlayout.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qlayoutitem.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qboxlayout.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QGroupBox \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qgroupbox.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qframe.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QHBoxLayout \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QLabel \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QMenu \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qmenu.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QMenuBar \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qmenubar.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QPushButton \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QSpacerItem \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QVBoxLayout \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/QSqlQuery \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qsqlquery.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/QSqlError \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qsqlerror.h \
+		ui_chifoumivue.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QMessageBox \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\chifoumivue.o ..\ChifoumiInterface\chifoumivue.cpp
@@ -1260,33 +1272,7 @@ debug/parametres.o: ../ChifoumiInterface/parametres.cpp ../ChifoumiInterface/par
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QWidget \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/QtDebug \
-		ui_parametres.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/QVariant \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QApplication \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qapplication.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/qeventloop.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/qguiapplication.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/qinputmethod.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QDialogButtonBox \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qdialogbuttonbox.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QHBoxLayout \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qboxlayout.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qlayout.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qlayoutitem.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qgridlayout.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QLabel \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qlabel.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qframe.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QLineEdit \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/qlineedit.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtextcursor.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtextformat.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/qpen.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/qtextoption.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QSpacerItem \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QVBoxLayout
+		ui_parametres.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\parametres.o ..\ChifoumiInterface\parametres.cpp
 
 debug/presentation.o: ../ChifoumiInterface/presentation.cpp ../ChifoumiInterface/presentation.h \
@@ -1409,7 +1395,18 @@ debug/presentation.o: ../ChifoumiInterface/presentation.cpp ../ChifoumiInterface
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/QValidator \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtGui/qvalidator.h \
 		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/qregularexpression.h \
-		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QWidget
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtWidgets/QWidget \
+		../ChifoumiInterface/connexion.h \
+		../ChifoumiInterface/database.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/QSqlDatabase \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qsqldatabase.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qtsqlglobal.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qtsql-config.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtCore/QVariant \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/QSqlQuery \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qsqlquery.h \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/QSqlError \
+		C:/Qt/Qt5.15.2/5.15.2/mingw81_64/include/QtSql/qsqlerror.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\presentation.o ..\ChifoumiInterface\presentation.cpp
 
 debug/qrc_ressourcesChifoumi.o: debug/qrc_ressourcesChifoumi.cpp 
