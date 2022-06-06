@@ -3,7 +3,7 @@
 
 #include <QDialog>
 #include "database.h"
-
+#include <QMessageBox>
 namespace Ui {
 class connexion;
 }
@@ -15,16 +15,22 @@ class connexion : public QDialog
 public:
     explicit connexion(QWidget *parent = nullptr);
     ~connexion();
-public:
-      bool verifConnexion(); // fonction qui va vérfier quand on quitte le dialogue si on est bien connecté.
+private:
+      bool verifConnexion(); // fonction qui va vérfier  si on est bien connecté.
 
+public:
+     bool getEtat(); //fonction qui donne l'etat de la connexion
 private:
     Ui::connexion *ui;
     database *maDb;
 private:
     QString getNom(); // fonction qui retroune le nom entré
     QString getMdp();// fonction qui retourne le mdp entré
+    bool etatConnec; //etat qui dit si l'on est bien connecté Vrai si connecté faux si non connecté
 
+
+public slots:
+     void confirmerConnec(); // slot qui comfirme la connxion après s'être identifié
 
 };
 

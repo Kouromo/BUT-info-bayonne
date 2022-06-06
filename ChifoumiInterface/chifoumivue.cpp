@@ -26,7 +26,7 @@ ChifoumiVue::ChifoumiVue(QWidget *parent)
     affichagePointsTemps(pointMax, secondesMax);
 
     chrono->setInterval(1000); // pulsation toutes les secondes
-
+    setWindowTitle("Chifoumi");
 
 
 }
@@ -233,7 +233,7 @@ void ChifoumiVue::txtApropos() // raccourci F1
 {
     QMessageBox msg;
     msg.setWindowTitle("A propos de cette application");
-    msg.setText("Jeu du Chifoumi v6 \r\n"" Créé le  04/04/2022 par ALVES Matéo et JOUVE Noé TD2 - TP4 ");
+    msg.setText("Jeu du Chifoumi v7 \r\n"" Créé le  04/04/2022 par ALVES Matéo et JOUVE Noé TD2 - TP4 ");
     msg.exec();
 }
 

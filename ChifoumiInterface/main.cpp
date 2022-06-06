@@ -22,12 +22,12 @@ int main(int argc, char *argv[])
     w.miseAJourInterface(Chifoumi::rien, Chifoumi::rien);
     w.show();
     connexion *connec= new connexion;
-    do
+    //On affiche le dialogue de connexion j
+    connec->exec();
+    // On ferme la fenêtre si l'on est pas connecté
+    if (!connec->getEtat())
     {
-           connec->exec();
+        w.close();
     }
-    while(!connec->verifConnexion());
-
-
     return a.exec();
 }

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>368</width>
+    <height>133</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QLabel" name="label_3">
+      <widget class="QLabel" name="lTitre">
        <property name="font">
         <font>
          <pointsize>15</pointsize>
@@ -26,35 +26,35 @@
         </font>
        </property>
        <property name="text">
-        <string>Connectez-vous pour jouer!</string>
+        <string>Indentifiez-vous...</string>
        </property>
       </widget>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="lIdentifiant">
          <property name="text">
-          <string>Identifant : </string>
+          <string>Utilisateur:</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lIdenifiant"/>
+        <widget class="QLineEdit" name="eIdenifiant"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="lMdp">
          <property name="text">
           <string>Mot de passe :</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lMdp"/>
+        <widget class="QLineEdit" name="eMdp"/>
        </item>
       </layout>
      </item>
@@ -63,9 +63,9 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="QConfirm">
+      <widget class="QPushButton" name="bConfirm">
        <property name="text">
-        <string>Confirmer</string>
+        <string>Entrez ...</string>
        </property>
       </widget>
      </item>
@@ -74,22 +74,5 @@
   </layout>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>QConfirm</sender>
-   <signal>clicked()</signal>
-   <receiver>connexion</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>199</x>
-     <y>221</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>199</x>
-     <y>149</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

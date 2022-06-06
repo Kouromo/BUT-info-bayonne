@@ -102,7 +102,7 @@ void presentation::nouvellePartie() // lancement d'une nouvelle partie
     LeModele->initCoups();
     laVue->nouvellePartie();
     tps = laVue->secondesMax; // à l'exécution défini à tps le nombre de secondes du compte à rebours(+1 ?)
-    bool pause = false; // état de jeu en cours au lancement
+
 }
 
 void presentation::aPropos()

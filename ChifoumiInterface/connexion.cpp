@@ -6,7 +6,7 @@ connexion::connexion(QWidget *parent) :
     ui(new Ui::connexion)
 {
     ui->setupUi(this);
-
+    QObject::connect(ui->bConfirm, SIGNAL(clicked()), this, SLOT(confirmerConnec()));
 }
 
 connexion::~connexion()
@@ -26,6 +26,7 @@ bool connexion::verifConnexion()
     }
 
     QSqlQuery maRequete("select nomJoueur, motDePasse from joueur"); // on écrit la requête
+    // on parcours tout les nomJoueur et mdp
    for (int i=0; maRequete.next(); i++)
    {
 
@@ -47,12 +48,36 @@ bool connexion::verifConnexion()
     return false;
 }
 
+
+
+bool connexion::getEtat()
+{
+    return this->etatConnec;
+}
+
 QString connexion::getNom()
 {
-    return ui->lIdenifiant->text();
+    return ui->eIdenifiant->text();
 }
 
 QString connexion::getMdp()
 {
-    return ui->lMdp->text();
+    return ui->eMdp->text();
+}
+
+void connexion::confirmerConnec()
+{
+    if (!verifConnexion())
+    {
+        QMessageBox msg;
+        msg.setIcon(QMessageBox::Information);
+        msg.setWindowTitle("Échec de la connexion");
+        msg.setText("Une erreur a été rencontrée");
+        msg.exec();
+    }
+    else
+    {
+        this->etatConnec=true;
+        this->close();
+    }
 }
