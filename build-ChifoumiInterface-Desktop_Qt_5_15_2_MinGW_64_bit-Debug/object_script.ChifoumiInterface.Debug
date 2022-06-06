@@ -1,0 +1,12 @@
+debug/chifoumi.o
+debug/connexion.o
+debug/database.o
+debug/main.o
+debug/chifoumivue.o
+debug/parametres.o
+debug/presentation.o
+debug/qrc_ressourcesChifoumi.o
+debug/moc_chifoumivue.o
+debug/moc_connexion.o
+debug/moc_parametres.o
+debug/moc_presentation.o
