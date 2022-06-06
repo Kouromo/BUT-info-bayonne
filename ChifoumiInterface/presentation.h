@@ -4,7 +4,6 @@
 #include <QObject>
 #include "chifoumi.h"
 #include "chifoumivue.h"
-#include "QTimer"
 
 class presentation : public QObject
 {
@@ -48,6 +47,11 @@ public slots:
      * change l'état du jeu de pause à jeu en cours
      */
     void pauseCompteur();
+    /**
+     * @brief aParametrage
+     * Appel parametrage() de la Vue
+     */
+    void aParametrage();
 private:
     Chifoumi *LeModele;
     ChifoumiVue *laVue;

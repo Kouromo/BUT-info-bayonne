@@ -6,17 +6,13 @@
 
 ChifoumiVue::ChifoumiVue(QWidget *parent)
     : QMainWindow(parent)
+    , nom("Vous")
+    , pointMax(5)
+    , secondesMax(30)
     , ui(new Ui::ChifoumiVue)
 {
     ui->setupUi(this);
-
-    QString pointVictoire;
-    pointVictoire.setNum(pointMax);
-    ui->lPointGagnant->setText(pointVictoire);
-    QString tempsRestant;
-    tempsRestant.setNum(secondesMax);
-    ui->lSecondes->setText(tempsRestant);
-
+    setWindowTitle("Chifoumi");
     //couleurs
     ui->lScoreJoueur->setStyleSheet("QLabel {color : blue;}");
     ui->lJoueur->setStyleSheet("QLabel {color : blue;}");
@@ -26,6 +22,8 @@ ChifoumiVue::ChifoumiVue(QWidget *parent)
     ui->lGagne->setStyleSheet("QLabel {color : grey;}");
     ui->lTemps->setStyleSheet("QLabel {color : grey;}");
     ui->lSecondes->setStyleSheet("QLabel {color : grey;}");
+
+    affichagePointsTemps(pointMax, secondesMax);
 
     chrono->setInterval(1000); // pulsation toutes les secondes
 }
@@ -87,6 +85,7 @@ void ChifoumiVue::nvelleConnexion(QObject *c)
     QObject::connect(ui->actionA_propos_de, SIGNAL(triggered()), c, SLOT(aPropos()));
     QObject::connect(chrono, SIGNAL(timeout()), c, SLOT(compteRebours()));
     QObject::connect(ui->bPause, SIGNAL(clicked()), c, SLOT(pauseCompteur()));
+    QObject::connect(ui->actionParam_trer, SIGNAL(triggered()), c, SLOT(aParametrage()));
 }
 
 void ChifoumiVue::supprConnexion(QObject *c)
@@ -98,6 +97,7 @@ void ChifoumiVue::supprConnexion(QObject *c)
     QObject::disconnect(ui->actionA_propos_de, SIGNAL(triggered()), c, SLOT(aPropos()));
     QObject::disconnect(chrono, SIGNAL(timeout()), c, SLOT(compteRebours()));
     QObject::disconnect(ui->bPause, SIGNAL(clicked()), c, SLOT(pauseCompteur()));
+    QObject::disconnect(ui->actionParam_trer, SIGNAL(triggered()), c, SLOT(aParametrage()));
 }
 
 void ChifoumiVue::messageVictoire(char personne, unsigned short int temps) // Victoire atteinte du pointMax défini
@@ -124,7 +124,7 @@ void ChifoumiVue::messageVictoire(char personne, unsigned short int temps) // Vi
         msg.setText(message);
     }
     msg.exec();
-
+    ui->actionParam_trer->setEnabled(true); // réactivation du paramétrage
 }
 
 void ChifoumiVue::messageFinTemps(char resultat, unsigned short int score) // Temps écoulé défini par secondesMax
@@ -140,7 +140,7 @@ void ChifoumiVue::messageFinTemps(char resultat, unsigned short int score) // Te
     msg.setIcon(QMessageBox::Information);
     QString personne;
     if (resultat == 'J') // Victoire Joueur
-        personne = "Vous terminez";
+        personne = ("Vous terminez");
     if (resultat == 'M') // Victoire Machine
         personne = "La machine termine";
     
@@ -149,7 +149,6 @@ void ChifoumiVue::messageFinTemps(char resultat, unsigned short int score) // Te
         msg.setWindowTitle("Fin de partie temps : pas d'avantage");
         QString message = QString("Hélas chers joueurs, temps de jeu fini ! Le jeu se termine sur une égalité avec tous deux %1 points.").arg(score);
         msg.setText(message);
-        msg.exec();
     }
     else // Victoire d'un des joueurs (même message)
     {
@@ -157,9 +156,9 @@ void ChifoumiVue::messageFinTemps(char resultat, unsigned short int score) // Te
         msg.setWindowTitle("Fin de partie temps : 1 avantage");
         QString message = QString("Hélas chers joueurs, temps de jeu fini ! %1 toutefois mieux, avec %2 points.").arg(personne).arg(score);
         msg.setText(message);
-        msg.exec();
     }
-
+    msg.exec();
+    ui->actionParam_trer->setEnabled(true); // réactivation du paramétrage
 }
 
 void ChifoumiVue::tempsCompteur(unsigned int temps) // afiche le temps restant du compteur sur la vue
@@ -189,6 +188,28 @@ void ChifoumiVue::repriseCompteur() // reprend le compte à rebours et réactive
     ui->bNewGame->setEnabled(true);
 }
 
+void ChifoumiVue::parametrage()
+{
+    parametres * dlgParam = new parametres(this);
+    if (dlgParam->exec() == QDialog::Accepted) // si clique sur ok
+    {
+        pointMax = dlgParam->getPointsSaisi(); // Application des paramètres
+        secondesMax = dlgParam->getTempsSaisi();
+        nom = dlgParam->getNom();
+        affichagePointsTemps(pointMax, secondesMax);
+        ui->lJoueur->setText(nom);
+    }
+}
+
+void ChifoumiVue::affichagePointsTemps(int maximumPoints, int maximumSecondes)
+{
+    QString pointVictoire;
+    pointVictoire.setNum(maximumPoints);
+    ui->lPointGagnant->setText(pointVictoire);
+    QString tempsRestant;
+    tempsRestant.setNum(maximumSecondes);
+    ui->lSecondes->setText(tempsRestant);
+}
 
 
 void ChifoumiVue::nouvellePartie()
@@ -201,15 +222,15 @@ void ChifoumiVue::nouvellePartie()
     ui->bPapier->setEnabled(true);
     ui->bPierre->setEnabled(true);
     ui->bPause->setEnabled(true);
+    ui->actionParam_trer->setEnabled(false);
     chrono->start(); // convertion en mili-secondes
-
 }
 
 void ChifoumiVue::txtApropos() // raccourci F1
 {
     QMessageBox msg;
     msg.setWindowTitle("A propos de cette application");
-    msg.setText("Jeu du Chifoumi v5 \r\n"" Créé le  04/04/2022 par ALVES Matéo et JOUVE Noé TD2 - TP4 ");
+    msg.setText("Jeu du Chifoumi v6 \r\n"" Créé le  04/04/2022 par ALVES Matéo et JOUVE Noé TD2 - TP4 ");
     msg.exec();
 }
 

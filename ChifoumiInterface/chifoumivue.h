@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <cstdlib>
 #include <QTimer>
+#include "parametres.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class ChifoumiVue; }
@@ -18,8 +19,9 @@ public:
     ~ChifoumiVue();
 public:
     // VARIABLES PUBLIQUES
-    unsigned short int pointMax = 5; // Nombre de points pour gagner (5 points par défaut)
-    unsigned short int secondesMax = 30; //Temps du timer en mili-secondes (30 secondes par défaut)
+    QString nom; // Nom auquel le joueur s'identifie
+    unsigned short int pointMax; // Nombre de points pour gagner (5 points par défaut)
+    unsigned short int secondesMax; //Temps du timer en mili-secondes (30 secondes par défaut)
 
     // ordres reçus par la Présentation
     /**
@@ -51,9 +53,11 @@ public:
     void tempsCompteur(unsigned int); // Mise à jour du temps affiché
     void arretCompteur(); // Arrête le timer et passe à l'état partieEnPause
     void repriseCompteur(); // Reprend le jeu et repasse à l'état partieEnCours
-
+    void parametrage(); // Appel de la fenêtre de dialogue paramétrage
+    void affichagePointsTemps(int, int); // Modifie le temps et le nombre max de points à atteindre
 private:
     Ui::ChifoumiVue *ui;
     QTimer *chrono = new QTimer(this);
+    parametres* dlgParam;
 };
 #endif // CHIFOUMIVUE_H
