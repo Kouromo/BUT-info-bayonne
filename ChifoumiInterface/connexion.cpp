@@ -7,6 +7,7 @@ connexion::connexion(QWidget *parent) :
 {
     ui->setupUi(this);
     QObject::connect(ui->bConfirm, SIGNAL(clicked()), this, SLOT(confirmerConnec()));
+    setWindowTitle("Connexion");
 }
 
 connexion::~connexion()
